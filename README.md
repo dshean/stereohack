@@ -8,7 +8,8 @@ Let's build some DEMs!
 #Goals
 
 - Can we produce high-quality DEMs in only 2 days?
-- Can we make ASP run on Windows?
+- Can we use Docker to get ASP running on Windows?
+- Can we use the ASP GUI to select ground control points for bundle adjustment?
 - Can we use ASP's current Structure from Motion functionality with arbitrary airborne camera images?
 
 #Installation
