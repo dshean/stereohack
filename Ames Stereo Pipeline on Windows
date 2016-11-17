@@ -38,11 +38,12 @@ This generates the first of a succession of errors caused by missing support lib
    :/# apt-get install libsm6
    :/# apt-get install libxext6
 
-4) When we exit this container all these improvements will be saved. Except for your $PATH! To save your path, echo it to the command line:
-   :/#  echo $PATH
-   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/ASP/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux/bin
-
-Copy the path statement (highlight and <RETURN>) to place it in the clipboard
+4) When we exit this container all these improvements will be saved. Except for your $PATH! To save your path, write your environment 
+file to the command line:
+   :/# env
+ and you will get lots of stuff. Near the end, find the line that looks something like
+   PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/ASP/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux/bin
+Copy this line (highlight and <RETURN>) to place it in the clipboard
 Add a PATH statement to your .bashrc file
     :/#  cd                     assures you are in your home directory
     :~#  echo "<paste>" >> .bashrc
