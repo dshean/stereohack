@@ -1,0 +1,54 @@
+Installing Ames Stereo Pipeline in a virtual machine on Windows 7
+
+1) Install Docker
+
+2) In Docker, pull ubuntu image:
+   $ docker pull ubuntu@sha256:062bba17f92e749bd3092e7569aa06c6773ade7df603958026f5397431754c
+(this is the tag for ubuntu14.04)
+
+In Docker, make container for ubuntu with Windows Geohackweek2016 directory mapped to /Geohackweek2016
+   $  docker run -i -t -v /c/Users/rah/Documents/Geohackweek2016:/Geohackweek2016 --name ubuntu2 ubuntu
+
+This will allow us to see datafiles we use/create in Windows
+
+later, to re-enter this container, 
+   $ docker start -ai ubuntu2
+
+
+3) In Docker, inside the ubuntu2 (or whatever you named it), 
+
+   :/# cd /
+   :/# mkdir ASP
+   :/# cd ASP
+
+Download latest ASP: 
+    :/# wget http://byss.ndc.nasa.gov/stereopipeline/binaries/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux.tar.bz2 --no-check-certificate
+and unpack
+    :/# tar -xvjf StereoPipeline-2.5.3-2016-08-23-x86_64-Linux.tar.bz2
+
+Amend your PATH 
+    :/# export PATH="~/asp/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux/bin:$PATH"
+
+Test to see if stereo runs:
+   :/#  stereo --version
+
+This generates the first of a succession of errors caused by missing support libraries (python, libsm6, libxext6, ...).  To fix these,
+   :/# apt-get update
+   :/# apt-get install python python-pip wget
+   :/# apt-get install libsm6
+   :/# apt-get install libxext6
+
+4) When we exit this container all these improvements will be saved. Except for your $PATH! To save your path, echo it to the command line:
+   :/#  echo $PATH
+   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/ASP/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux/bin
+
+Copy the path statement (highlight and <RETURN>) to place it in the clipboard
+Add a PATH statement to your .bashrc file
+    :/#  cd                     assures you are in your home directory
+    :~#  echo "<paste>" >> .bashrc
+
+Check by looking at .bashrc
+    :~#  more .bashrc
+Space to move through file. Your new path statement should be at the end. 
+
+   
