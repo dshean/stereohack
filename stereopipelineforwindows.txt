@@ -1,0 +1,33 @@
+﻿Steps to get sterero pipeline running on Windows machine
+Each step is followed by commands for docker that should work.  All commands are indented.
+
+Install docker and get docker working
+
+You need ubuntu
+	docker run -i -t ubuntu
+
+cd to start from root 
+	you should see ~ not # in your command line
+
+make a directory for the stereo pipeline
+	mkdir asp
+
+change directory to be in asp
+	cd asp
+
+need to be able to use the command wget
+	apt-get update
+	apt-get install wget
+	apt-get update \
+	apt-get install -y wget
+
+then get the stereo pipeline install from nasa
+	wget --no-check-certificates http://byss.ndc.nasa.gov/stereopipeline/binaries/StereoPipeline-2.5.3-2016-08-23-x86_64-Linux.tar.bz2
+
+need to install another package to extract
+	apt-get install dtrx
+
+now you can extract
+	dtrx StereoPipeline-2.5.3-2016-08-23-x86_64-Linux.tar.bz2
+
+you should see a folder now with that name in your directory, you can cd into it and ls to see the available commands
