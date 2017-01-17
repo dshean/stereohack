@@ -1,5 +1,5 @@
 # stereohack
-Repo for code, notes, documentation, etc. from adventures with the NASA Ames Stereo Pipeline during geohackweek2016.
+Repo for code, notes, documentation, etc. from adventures with the NASA Ames Stereo Pipeline during the [2016 UW eScience Geohackweek](http://geohackweek.github.io/).
 
 #Overview
 
