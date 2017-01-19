@@ -1,6 +1,10 @@
 # stereohack
 Repo for code, notes, documentation, etc. from adventures with the NASA Ames Stereo Pipeline during the [2016 UW eScience Geohackweek](http://geohackweek.github.io/).
 
+The Geohackweek results can be found on the [wiki](https://github.com/dshean/stereohack/wiki):
+- step-by-step instructions for getting ASP running on Windows
+- tutorial for new users working with sample DigitalGlobe image data
+
 #Overview
 
 Let's build some DEMs!  
